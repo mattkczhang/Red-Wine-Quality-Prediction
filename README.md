@@ -1,4 +1,4 @@
-# Red-Wine-Quality-Prediction
+# Red Wine Quality Prediction
 
 The Red Wine Quality Prediction project is a in-class group project at the University of Chicago Data Mining course in 2022 Spring. 
 
