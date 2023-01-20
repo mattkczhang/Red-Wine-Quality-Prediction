@@ -21,10 +21,10 @@ def get_user_input():
     sulphates = st.sidebar.slider('sulphates', 0.00, 2.00, 0.62)
     alcohol = st.sidebar.slider('alcohol', 8.0, 20.0, 10.2)
     
-    features = {'volatile_acidity': volatile_acidity,
-            'citric_acid': citric_acid,
+    features = {'volatile acidity': volatile_acidity,
+            'citric acid': citric_acid,
             'chlorides': chlorides,
-            'free_sulfur_dioxide': free_sulfur_dioxide,
+            'free sulfur dioxide': free_sulfur_dioxide,
             'sulphates': sulphates,
             'alcohol': alcohol
             }
