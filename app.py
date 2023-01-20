@@ -4,7 +4,7 @@ import pandas as pd
 import joblib
 
 #Loading up the Regression model we created
-loaded_rf = joblib.load("/Users/chonge/Documents/Document/University_of_Chicago/Quarter_2/Data Mining Principle/final project/finalrf.joblib")
+loaded_rf = joblib.load("./finalrf.joblib")
 
 #Caching the model for faster loading
 # @st.cache
@@ -37,7 +37,7 @@ st.title('Red Wine Quality Prediction')
 user_input_dta = get_user_input()
 user_input_dta_col = ['volatile acidity', 'citric acid', 'chlorides', 'free sulfur dioxide', 'sulphates', 'alcohol']
 
-st.image("/Users/chonge/Documents/Document/University_of_Chicago/Quarter_2/Data Mining Principle/final project/red_wine.jpeg")
+st.image("./red_wine.jpeg")
 
 st.subheader('Predicted wine quality')
 
@@ -49,7 +49,7 @@ for i in [col1, col2, col3, col4, col5, col6, col7]:
         i.metric(user_input_dta_col[temp], user_input_dta[user_input_dta.columns[temp]])
         temp += 1
     else:
-        i.metric('predicted wine quality', loaded_rf.predict(user_input_dta)[0])
+        i.metric('pred quality', loaded_rf.predict(user_input_dta)[0])
 
 pred_proba = pd.DataFrame(loaded_rf.predict_proba(user_input_dta), columns=('Quality %d' % i for i in range(3,9)))
 
